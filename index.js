@@ -1,7 +1,7 @@
 const express = require('express');
 var exphbs  = require('express-handlebars');
 const RegisRoutes = require('./registration');
-const models = require('./models');
+const Models = require('./models');
 const app = express();
 
 var bodyParser = require('body-parser');
@@ -11,6 +11,7 @@ const session = require('express-session');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+const models = Models(process.env.MONGO_DB_URL ||'mongodb://localhost/registrations');
 const regisRoutes = RegisRoutes(models);
 
 app.use(express.static('public'));
@@ -24,10 +25,6 @@ app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000  * 30}}))
 app.use(flash());
 
 
-app.get('/reg_number', regisRoutes.addScreen);
+app.get('/reg_number', regisRoutes.index);
 app.post('/reg_number', regisRoutes.add)
-const port = 3001;
-app.listen(port, function() {
-
-  console.log("web app started on: " + port);
-});
+var server = app.listen(process.env.PORT || 3001);

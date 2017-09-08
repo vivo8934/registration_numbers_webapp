@@ -1,11 +1,21 @@
 const mongoose = require('mongoose');
 module.exports = function(mongoUrl){
 
-  mongoose.connect(mongoUrl);
+mongoose.connect(mongoUrl)
 
-  const RegistrationNo = mongoose.model('RegistrationNo', {name : String});
+const RegisNumbersSchema = mongoose.Schema({
+    name: String,
+    counter: Number
+  });
+  RegisNumbersSchema.index({
+    name: 1,
+  }, {
+    unique: true
+  });
 
-  return{
-    RegistrationNo
-  }
+const RegisNumbers = mongoose.model('RegisNumbers', RegisNumbersSchema);
+
+return{
+  RegisNumbers
+};
 }

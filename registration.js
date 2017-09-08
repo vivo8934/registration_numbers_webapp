@@ -1,41 +1,45 @@
 module.exports = function(models) {
 
-const RegisList = [];
+  const index = function(req, res, next){
+models.RegisNumbers.find({}, function(err, results){
+  if(err){
+    return next(err);
+  }
+  else{
+console.log(results);
+    res.render('regNo/index', {regisNumber: results})
+  }
+})
+  }
 
 
-const addScreen = function(req, res){
-
-res.render('regNo/index');
-}
-
-  const add = function(req, res) {
-    var plate = req.body.plate;
-
-    var RegistrationNo = {
-      RegNo: plate.substr(0, 2).toUpperCase() + " " + plate.substr(2).toLowerCase()
-    }
-
-  var foundRegNo = RegisList.find(function(currentRegNo){
-
-  return currentRegNo === RegistrationNo.RegNo;
-    })
-if(!RegistrationNo.RegNo){
+  const add = function(req, res, next) {
+    var numberPlate = {
+      name: req.body.plate
+    };
+if(!numberPlate || !numberPlate.name){
   req.flash('error', 'Please enter Registration Number');
+  res.redirect('/reg_number');
 }
     else {
-    if(!foundRegNo){
-      RegisList.push(RegistrationNo.RegNo);
+models.RegisNumbers.create(numberPlate, function(err, results){
+
+  if(err){
+    if(err.code === 11000){
+      req.flash('error', 'RegisNumbers already exits');
     }
     else{
-      req.flash('error', 'cant add same registration number');
+
+      return next(err);
     }
   }
-    res.render('regNo/index', {regisNumber: RegisList})
-
+  req.flash('success', 'Registration Number added')
+  res.redirect('/reg_number');
+});
+  }
 }
-
   return {
-    addScreen,
+    index,
     add
   }
 }
