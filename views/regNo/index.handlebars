@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="registration_number.css">
   </head>
   <body>
+    <div class="Main">
     <h1>Registration Number</h1>
 
 <form class="" action="/reg_number" method="post">
-
-<input type="text" name="plate" placeholder="enter regNo">
-<input type="submit"  value="add">
+<div class="TextArea">
+  <input type="text" name="plate" placeholder="enter regNo" class="myText">
+</div>
+<br>
+<input type="submit"  value="add" class="myButton">
 <br><br>
 {{#if messages.error}}
 <div class="error">
@@ -32,10 +35,13 @@
     </ul>
   </div>
 </form>
-<form class="" action="index.html" method="post">
-  <input type="radio" name="Cape Town" value="">
-  <input type="radio" name="Malmesbury" value="">
-  <input type="radio" name="Bellville" value="">
+<form class="" action="/filter" method="post">
+  <input type="radio" id="f-option" name="Town" value="CA"><label for="f-option">Cape Town</label>
+<input type="radio" id="f-option" name="Town" value="CK"><label for="f-option">Malmesbury</label>
+<input type="radio" id="f-option" name="Town" value="CY"><label for="f-option">Bellville</label>
+<input type="radio" id="f-option" name="Town" value="All" class="towns"><label for="f-option">ALL</label><br><br>
+  <input type="submit"  value="Show" class="myButton">
 </form>
+</div>
   </body>
 </html>

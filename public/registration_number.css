@@ -16,8 +16,48 @@ background-color: whitesmoke;
 
 }
 .error{
-  color: red;
+  color: #ce2a18;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
 }
-.success{
-  color: green;
+input[type="radio"] {
+    display:inline-block;
+}
+input[type="radio"] + label {
+    display:inline-block;;
+    width:99px;
+    height:69px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+  background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+  }
+h1{
+  font-style: italic;
+  font-weight: bold;
+  font-size: 50px;
+  color: #0c1e3a;
+}
+.Main{
+  margin: auto;
+background-color: #6f8e6b;
+align-items: center;
+text-align: center;
+align-content: center;
+padding-top: 1px;
+width: 80%;
+}
+.myText{
+  width: 190px;
+   height: 30px;
+   border-radius: 5px;
+}
+.myButton
+{
+    width: 80px;
+    height: 30px;
+    /*margin-left: 44%;*/
+   margin-top: 20px;
+    border-radius: 10px;
 }

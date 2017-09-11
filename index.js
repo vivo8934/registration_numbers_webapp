@@ -27,4 +27,5 @@ app.use(flash());
 
 app.get('/reg_number', regisRoutes.index);
 app.post('/reg_number', regisRoutes.add)
+app.post('/filter', regisRoutes.regFilter)
 var server = app.listen(process.env.PORT || 3001);
