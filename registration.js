@@ -18,10 +18,10 @@ module.exports = function(models) {
     var numberPlate = {
       name: (req.body.plate).substr(0, 2).toUpperCase() + ' ' + (req.body.plate).substr(2).toLowerCase()
     };
-  //  console.log(numberPlate.name);
-    if (!numberPlate || !numberPlate.name) {
-      res.redirect('/reg_number');
+
+    if (!numberPlate || !numberPlate.name || !(req.body.plate)) {
       req.flash('error', 'Please enter Registration Number');
+      res.redirect('/reg_number');
     } else {
       models.RegisNumbers.create(numberPlate, function(err, results) {
 
