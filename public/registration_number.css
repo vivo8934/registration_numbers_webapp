@@ -47,6 +47,7 @@ text-align: center;
 align-content: center;
 padding-top: 1px;
 width: 80%;
+border-radius: 10%;
 }
 .myText{
   width: 190px;
