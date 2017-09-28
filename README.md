@@ -63,4 +63,6 @@ express-session deprecated undefined saveUninitialized option; provide saveUnini
 3 use registrations
 3 db.regisnumbers.find({})
 
-##  TEST
+##  TEST [![Build Status](https://travis-ci.org/vivo8934/registration_numbers_webapp.svg?branch=master)](https://travis-ci.org/vivo8934/registration_numbers_webapp)
+
+- All the test here are being done true travic and mocha
