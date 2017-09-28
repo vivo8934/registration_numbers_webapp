@@ -66,3 +66,5 @@ express-session deprecated undefined saveUninitialized option; provide saveUnini
 ##  TEST [![Build Status](https://travis-ci.org/vivo8934/registration_numbers_webapp.svg?branch=master)](https://travis-ci.org/vivo8934/registration_numbers_webapp)
 
 - All the test here are being done true travic and mocha
+
+## License: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
