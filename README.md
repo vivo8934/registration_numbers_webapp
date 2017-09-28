@@ -13,13 +13,11 @@ This application allow user to enter car registrations of all towns that are in 
 The first thing before getting started with the installations the user needs to go, to my github account and the following link will take you straight.
 
 - [My GithubAccount](https://github.com/vivo8934)
-- npm install (for node_modules)
-- Go to the repositories and Select registration_numbers_webapp or just following this link if you find that hard
-[registration](https://github.com/vivo8934/registration_numbers_webapp)
+- open the repository of registration_numbers_webapp
 - fork the registration_numbers_webapp or clone it using this command on terminal (git clone https://github.com/vivo8934/registration_numbers_webapp.git)
-- When you have the folder on your machine open it, go to the package.json.
-- install all the dependencies using the following command:
-eg for body-parser (npm install body-parser).
+- Once you have the repository on the local machine , open it using terminal
+- insert this command on terminal:  npm install (to install all the node_modules && dependencies on the package.json)
+
 
 ## KNOWN ISSUES
 
